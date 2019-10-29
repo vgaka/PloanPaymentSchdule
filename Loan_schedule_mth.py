@@ -15,9 +15,13 @@ def loanbymth(financeamount,interest_perannum,tenor):
 			accuprincpay = round(accuprincpay - pp,6)
 			payschedule.append([i,pp,ip*1,intsallment,accuprincpay,interest_perannum/12 ])
 	return payschedule
-
-print('Program parameter Principle {} annum interest {}, month {}'.format(1000000,.15,60))
-print('-------------------------------------')
-paysch = loanbymth(1000000,.15,60)
-for py in paysch:
-	print(py)
+	
+if __name__ == '__main__':
+	loanamt = 10000
+	annualinterest_flat = 0.15
+	loantenor = 60
+	print('Program parameter Principle {} annum interest {}, month {}'.format(loanamt,annualinterest_flat,loantenor))
+	print('-------------------------------------')
+	paysch = loanbymth(loanamt,annualinterest_flat,loantenor)
+	for py in paysch:
+		print(py)
